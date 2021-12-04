@@ -1,6 +1,8 @@
 # Puppeteer Extension Transport
 
-This library allows you to use [**puppeteer-core**](https://github.com/puppeteer/puppeteer#puppeteer-core) in your browser extension's background page/service worker. It internally uses chrome.debugger extension api so browser **doesn't** need to be started with remote debugging flag.
+[![npm version](https://badge.fury.io/js/puppeteer-extension-transport.svg)](https://badge.fury.io/js/puppeteer-extension-transport)
+
+This package allows you to use [**puppeteer-core**](https://github.com/puppeteer/puppeteer#puppeteer-core) in your browser extension's background page/service worker. It internally uses chrome.debugger extension api so browser **doesn't** need to be started with remote debugging flag.
 
 <br>
 
