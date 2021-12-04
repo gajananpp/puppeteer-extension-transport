@@ -24,7 +24,7 @@ class ExtensionDebuggerTransport implements ConnectionTransport {
   target: chrome.debugger.TargetInfo;
   debugee: chrome.debugger.Debuggee;
 
-  responseDelay = 0.025 * 1000;
+  responseDelay = 0.03 * 1000;
 
   private _sessionId: string;
 
@@ -66,7 +66,6 @@ class ExtensionDebuggerTransport implements ConnectionTransport {
         params: params,
         sessionId: this._sessionId,
       };
-      console.log('event', event);
       source.tabId === this.target.tabId ? this._emit(event) : null;
     });
 
@@ -126,7 +125,6 @@ class ExtensionDebuggerTransport implements ConnectionTransport {
       error: error,
       result: result,
     };
-    console.log(command);
     this._delaySend(response);
   }
 
