@@ -27,7 +27,7 @@ yarn add puppeteer-extension-transport
 
 ## Usage
 
-There is an [extension](examples/extension) in examples folder which you can load in your browser to test. Once loaded, to trigger function press <kbd>Alt + E</kbd> or <kbd>⌥ + E</kbd>.
+There is an [extension](examples/extension) in examples folder which you can load in your browser to test.
 
 Here is an example of using this package:
 
