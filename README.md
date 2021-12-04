@@ -32,8 +32,8 @@ There is an [extension](examples/extension) in examples folder which you can loa
 Here is an example of using this package:
 
 ```javascript
-const puppeteer = require('puppeteer-core/lib/cjs/puppeteer/web')
-const ExtensionTransport = require('puppeteer-extension-transport')
+import puppeteer from 'puppeteer-core/lib/cjs/puppeteer/web'
+import ExtensionTransport from 'puppeteer-extension-transport'
 
 async function run(tabId) {
     const extensionTransport = await ExtensionTransport.create(tabId)
