@@ -1,0 +1,6 @@
+{
+  "extends": "./node_modules/gts/",
+  "rules": {
+    "@typescript-eslint/no-explicit-any": 0
+  }
+}
