@@ -35,7 +35,7 @@ Here is an example of using this package:
 const puppeteer = require('puppeteer-core/lib/cjs/puppeteer/web')
 const ExtensionTransport = require('puppeteer-extension-transport')
 
-async run(tabId) {
+async function run(tabId) {
     const extensionTransport = await ExtensionTransport.create(tabId)
     const browser = await puppeteer.connect({
         transport: extensionTransport,
