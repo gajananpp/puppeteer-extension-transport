@@ -6,7 +6,7 @@ This library allows you to use [**puppeteer-core**](https://github.com/puppeteer
 
 > **IMPORTANT NOTE** :- 
 > For this to work, extension should have **debugger** permission and **unsafe_eval** content security policy specified in it's manifest json.
-> unsafe_eval is needed since puppeteer internally uses [Function constuctors](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) and browser by default blocks it for extensions. Check [manifest.json]() in examples for reference.
+> unsafe_eval is needed since puppeteer internally uses [Function constuctors](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) and browser by default blocks it for extensions. Check [manifest.json](examples/extension/manifest.json) in examples for reference.
 
 <br>
 

@@ -11,6 +11,7 @@
   "keywords": ["puppeteer", "puppeteer-core", "automation", "extension"],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "prelint": "npm run fix",
     "lint": "gts lint",
     "clean": "gts clean",
     "precompile": "npm run clean",
