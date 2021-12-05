@@ -1,6 +1,7 @@
 # Puppeteer Extension Transport
 
-[![npm version](https://badge.fury.io/js/puppeteer-extension-transport.svg)](https://badge.fury.io/js/puppeteer-extension-transport)
+![lint](https://github.com/gajananpp/puppeteer-extension-transport/actions/workflows/lint.yml/badge.svg) 
+[![npm version](https://badge.fury.io/js/puppeteer-extension-transport.svg)](https://www.npmjs.com/package/puppeteer-extension-transport)
 
 This package allows you to use [**puppeteer-core**](https://github.com/puppeteer/puppeteer#puppeteer-core) in your browser extension's background page/service worker. It internally uses chrome.debugger extension api.
 
@@ -102,6 +103,7 @@ You will atleast need to specify below in manifest.json:
 "permissions": ["debugger"]
 "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self';"
 ```
+Check example [manifest.json](examples/extension/manifest.json)
 
 <br>
 
