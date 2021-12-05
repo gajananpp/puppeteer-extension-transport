@@ -78,8 +78,6 @@ Check puppeteer documentation [here](https://pptr.dev/).
 
 <br>
 
-**Contributions are welcome**
-
 <br>
 
 ## FAQ
