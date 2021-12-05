@@ -107,7 +107,7 @@ Check example [manifest.json](examples/extension/manifest.json)
 
 <br>
 
-**Q: Who should use this ?**
+**Q: Who could use this ?**
 <br>
 If you are planning to do any of the following in extension:
 1. do automation.
