@@ -2,7 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/puppeteer-extension-transport.svg)](https://badge.fury.io/js/puppeteer-extension-transport)
 
-This package allows you to use [**puppeteer-core**](https://github.com/puppeteer/puppeteer#puppeteer-core) in your browser extension's background page/service worker. It internally uses chrome.debugger extension api so browser **doesn't** need to be started with remote debugging flag.
+This package allows you to use [**puppeteer-core**](https://github.com/puppeteer/puppeteer#puppeteer-core) in your browser extension's background page/service worker. It internally uses chrome.debugger extension api.
 
 <br>
 
@@ -112,4 +112,5 @@ If you are planning to do any of the following in extension:
 2. profiling and debugging of web pages.
 3. web crawling.
 4. monitor and handle page, network lifecycle events.
+5. any other thing you would like to use puppeteer for.
 <br>

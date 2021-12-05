@@ -24,6 +24,7 @@ class ExtensionDebuggerTransport implements ConnectionTransport {
   target: chrome.debugger.TargetInfo;
   debugee: chrome.debugger.Debuggee;
 
+  // feel free to adjust this
   responseDelay = 0.03 * 1000;
 
   private _sessionId: string;
