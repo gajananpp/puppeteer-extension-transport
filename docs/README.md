@@ -1,3 +1,5 @@
+puppeteer-extension-transport / [Exports](modules.md)
+
 # Puppeteer Extension Transport
 
 ![lint](https://github.com/gajananpp/puppeteer-extension-transport/actions/workflows/lint.yml/badge.svg) 
@@ -103,8 +105,9 @@ No. This package internally uses `chrome.debugger` api to communicate with chrom
 You will atleast need to specify below in manifest.json:
 ```json
 "permissions": ["debugger"]
+"content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self';"
 ```
-Check example [v2 manifest.json](examples/extension-v2/manifest.json) or [v3 manifest.json](examples/extension-v3/manifest.json) 
+Check example [manifest.json](examples/extension/manifest.json)
 
 <br>
 
