@@ -1,6 +1,7 @@
 # Puppeteer Extension Transport
 
 ![lint](https://github.com/gajananpp/puppeteer-extension-transport/actions/workflows/lint.yml/badge.svg) 
+![build](https://github.com/gajananpp/puppeteer-extension-transport/actions/workflows/build.yml/badge.svg) 
 [![npm version](https://badge.fury.io/js/puppeteer-extension-transport.svg)](https://www.npmjs.com/package/puppeteer-extension-transport)
 
 This package allows you to use [**puppeteer-core**](https://github.com/puppeteer/puppeteer#puppeteer-core) in your browser extension's background page/service worker. It internally uses chrome.debugger extension api.
