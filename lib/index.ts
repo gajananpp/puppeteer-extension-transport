@@ -20,19 +20,58 @@ interface CDPEvent {
   sessionId?: string;
 }
 
-class ExtensionDebuggerTransport implements ConnectionTransport {
-  target: chrome.debugger.TargetInfo;
-  debugee: chrome.debugger.Debuggee;
+/**
+ * A puppeteer connection transport for extension.
+ */
+export class ExtensionDebuggerTransport implements ConnectionTransport {
+  private target: chrome.debugger.TargetInfo;
+  private debugee: chrome.debugger.Debuggee;
 
-  // feel free to adjust this
-  responseDelay = 0.03 * 1000;
+  /**
+   * If required, adjust this value to increase or decrese delay in ms between subsequent commands.
+   * > Note :- decreasing it too much can give issues
+   *
+   * @default 0.04 * 1000
+   */
+  delay = 0.04 * 1000;
 
   private _sessionId: string;
 
+  /** @internal */
   onmessage?: (message: string) => void;
+
+  /** @internal */
   onclose?: () => void;
 
-  static create(tabId: number): Promise<ExtensionDebuggerTransport> {
+  /**
+   * Returns a puppeteer connection transport instance for extension.
+   * @example
+   * How to use it:
+   * ```javascript
+   * const extensionTransport = await ExtensionDebuggerTransport.create(tabId)
+   * const browser = await puppeteer.connect({
+   *  transport: extensionTransport,
+   *  defaultViewport: null
+   * })
+   *
+   * // use first page from pages instead of using browser.newPage()
+   * const [page] = await browser.pages()
+   * await page.goto('https://wikipedia.org')
+   * ```
+   *
+   * @param tabId - The id of tab to target. You can get this using chrome.tabs api
+   * @param functionSerializer - Optional function serializer. If not specified and
+   * if extension's manifest.json contains `unsafe_eval` then defaults to `new Function()`
+   * else defaults to `() => {}`
+   * @returns - The instance of {@link ExtensionDebuggerTransport}
+   *
+   * @throws Error
+   * If debugger permission not given to extension
+   */
+  static create(
+    tabId: number,
+    functionSerializer?: FunctionConstructor
+  ): Promise<ExtensionDebuggerTransport> {
     if (chrome.debugger) {
       const debugee: chrome.debugger.Debuggee = {
         tabId: tabId,
@@ -43,6 +82,7 @@ class ExtensionDebuggerTransport implements ConnectionTransport {
           if (!error) {
             const target = await this._getTargetInfo(debugee);
             const transport = new ExtensionDebuggerTransport(target);
+            transport._initialize(functionSerializer);
             resolve(transport);
           } else {
             reject(error);
@@ -54,7 +94,7 @@ class ExtensionDebuggerTransport implements ConnectionTransport {
     }
   }
 
-  constructor(target: chrome.debugger.TargetInfo) {
+  private constructor(target: chrome.debugger.TargetInfo) {
     this.target = target;
     this._sessionId = target.id;
     this.debugee = {
@@ -75,6 +115,7 @@ class ExtensionDebuggerTransport implements ConnectionTransport {
     });
   }
 
+  /** @internal */
   send(message: string): void {
     const command: CDPCommand = JSON.parse(message);
     const targetCommands = [
@@ -96,6 +137,7 @@ class ExtensionDebuggerTransport implements ConnectionTransport {
     }
   }
 
+  /** @internal */
   close(): void {
     chrome.debugger.detach(this.debugee, () => this._closeTarget());
   }
@@ -117,6 +159,20 @@ class ExtensionDebuggerTransport implements ConnectionTransport {
         target[0] ? resolve(target[0]) : reject(new Error('target not found'));
       });
     });
+  }
+
+  private _initialize(functionSerializer?: FunctionConstructor) {
+    if (functionSerializer) {
+      Function = functionSerializer;
+    } else {
+      try {
+        new Function();
+      } catch (e) {
+        Function = function () {
+          return () => {};
+        } as any as FunctionConstructor;
+      }
+    }
   }
 
   private _handleCommandResponse(command: CDPCommand, result: any) {
@@ -162,7 +218,7 @@ class ExtensionDebuggerTransport implements ConnectionTransport {
         response.result = {
           success: true,
         };
-        setTimeout(() => this.close(), this.responseDelay);
+        setTimeout(() => this.close(), this.delay);
         break;
     }
     this._delaySend(response);
@@ -213,8 +269,6 @@ class ExtensionDebuggerTransport implements ConnectionTransport {
   private _delaySend(response: CDPCommandResponse) {
     setTimeout(() => {
       this?.onmessage?.call(null, JSON.stringify(response));
-    }, this.responseDelay);
+    }, this.delay);
   }
 }
-
-export default ExtensionDebuggerTransport;

@@ -8,7 +8,12 @@
     "build/src"
   ],
   "license": "MIT",
-  "keywords": ["puppeteer", "puppeteer-core", "automation", "extension"],
+  "keywords": [
+    "puppeteer",
+    "puppeteer-core",
+    "automation",
+    "extension"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prelint": "npm run fix",
@@ -16,11 +21,12 @@
     "clean": "gts clean",
     "precompile": "npm run clean",
     "compile": "tsc",
-    "postcompile": "browserify build/examples/extension/background.js -o build/examples/extension/background.js",
+    "postcompile": "browserify build/examples/extension-v2/background.js -o build/examples/extension-v2/background.js && browserify build/examples/extension-v3/background.js -o build/examples/extension-v3/background.js",
     "fix": "gts fix",
     "prepare": "npm run compile",
     "pretest": "npm run compile",
-    "posttest": "npm run lint"
+    "posttest": "npm run lint",
+    "docs": "typedoc --excludePrivate --excludeInternal lib/index.ts"
   },
   "devDependencies": {
     "@types/chrome": "^0.0.166",
@@ -29,6 +35,8 @@
     "browserify": "^17.0.0",
     "gts": "^3.1.0",
     "puppeteer-core": "^12.0.1",
+    "typedoc": "^0.22.10",
+    "typedoc-plugin-markdown": "^3.11.7",
     "typescript": "^4.0.3"
   }
 }
