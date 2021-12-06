@@ -1,0 +1,23 @@
+{
+    "name": "Puppeteer Extension Example v2",
+    "version": "0.0.0.1",
+    "description": "Example extension which uses puppeteer-extension-transport",
+    "permissions": [
+        "tabs",
+        "debugger",
+        "<all_urls>"
+    ],
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "commands": {
+        "test": {
+            "suggested_key": {
+                "default": "Alt+E"
+            },
+            "description": "for testing puppeteer-extension-transport"
+        }
+    },
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self';",
+    "manifest_version": 2
+}
