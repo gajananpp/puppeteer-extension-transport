@@ -9,7 +9,7 @@ This package allows you to use [**puppeteer-core**](https://github.com/puppeteer
 <br>
 
 > **IMPORTANT NOTE** :- 
-> For this to work, extension should have **debugger** permission and **unsafe_eval** content security policy specified in it's manifest json. Check [manifest.json](examples/extension-v2/manifest.json) in examples for reference.
+> For this to work, extension should have **debugger** permission specified in it's manifest json. Check [manifest.json](examples/extension-v2/manifest.json) in examples for reference.
 
 <br>
 
