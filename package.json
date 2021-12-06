@@ -26,7 +26,7 @@
     "prepare": "npm run compile",
     "pretest": "npm run compile",
     "posttest": "npm run lint",
-    "docs": "typedoc --excludePrivate --excludeInternal lib/index.ts"
+    "docs": "typedoc --excludePrivate --excludeInternal --readme none lib/index.ts"
   },
   "devDependencies": {
     "@types/chrome": "^0.0.166",

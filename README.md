@@ -80,7 +80,7 @@ Check puppeteer documentation [here](https://pptr.dev/).
 
 ## API
 
-Check other available options/config for this package [here](docs/modules.md).
+Check other available options/config for this package [here](docs/README.md).
 
 <br>
 

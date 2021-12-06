@@ -1,4 +1,4 @@
-[puppeteer-extension-transport](../README.md) / [Exports](../modules.md) / ExtensionDebuggerTransport
+[puppeteer-extension-transport](../README.md) / ExtensionDebuggerTransport
 
 # Class: ExtensionDebuggerTransport
 
@@ -27,11 +27,11 @@ A puppeteer connection transport for extension.
 If required, adjust this value to increase or decrese delay in ms between subsequent commands.
 > Note :- decreasing it too much can give issues
 
-**`default`** 0.03 * 1000
+**`default`** 0.04 * 1000
 
 #### Defined in
 
-[index.ts:36](https://github.com/gajananpp/puppeteer-extension-transport/blob/305df11/lib/index.ts#L36)
+[index.ts:36](https://github.com/gajananpp/puppeteer-extension-transport/blob/11bf2e4/lib/index.ts#L36)
 
 ## Methods
 
@@ -73,4 +73,4 @@ If debugger permission not given to extension
 
 #### Defined in
 
-[index.ts:71](https://github.com/gajananpp/puppeteer-extension-transport/blob/305df11/lib/index.ts#L71)
+[index.ts:71](https://github.com/gajananpp/puppeteer-extension-transport/blob/11bf2e4/lib/index.ts#L71)
