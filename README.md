@@ -79,8 +79,6 @@ Check puppeteer documentation [here](https://pptr.dev/).
 
 <br>
 
-<br>
-
 ## FAQ
 
 **Q: With which browsers can this be used ?**
@@ -110,8 +108,6 @@ Check example [manifest.json](examples/extension/manifest.json)
 <br>
 If you are planning to do any of the following in extension:
 1. do automation.
-2. profiling and debugging of web pages.
-3. web crawling.
-4. monitor and handle page, network lifecycle events.
-5. any other thing you would like to use puppeteer for.
+2. profiling, debugging, monitoring and handling lifecycle events of web pages.
+3. any other thing you would like to use puppeteer for.
 <br>
