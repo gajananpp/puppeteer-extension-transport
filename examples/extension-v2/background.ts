@@ -1,5 +1,5 @@
 import puppeteer from 'puppeteer-core/lib/cjs/puppeteer/web';
-import { ExtensionDebuggerTransport } from '../../lib';
+import {ExtensionDebuggerTransport} from '../../lib';
 
 const run = async (tabId: number) => {
   const extensionTransport = await ExtensionDebuggerTransport.create(tabId);

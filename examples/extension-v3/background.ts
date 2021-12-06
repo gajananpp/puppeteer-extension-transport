@@ -1,5 +1,5 @@
 import puppeteer from 'puppeteer-core/lib/cjs/puppeteer/web';
-import { ExtensionDebuggerTransport } from '../../lib';
+import {ExtensionDebuggerTransport} from '../../lib';
 
 const run = async (tabId: number) => {
   const extensionTransport = await ExtensionDebuggerTransport.create(tabId);
@@ -30,7 +30,7 @@ const run = async (tabId: number) => {
 
 chrome.commands.onCommand.addListener(command => {
   if (command === 'test') {
-    console.log('test')
+    console.log('test');
     chrome.tabs.create(
       {
         active: true,
