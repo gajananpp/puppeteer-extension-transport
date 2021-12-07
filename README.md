@@ -71,6 +71,9 @@ chrome.tabs.create(
     tab => (tab.id ? run(tab.id) : null)
 )
 ```
+Execution :
+
+![execution gif](examples/execution.gif)
 
 <br>
 
