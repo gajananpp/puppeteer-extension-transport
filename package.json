@@ -1,11 +1,14 @@
 {
   "name": "puppeteer-extension-transport",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Use puppeteer in your browser extension",
   "repository": {
     "url": "https://github.com/gajananpp/puppeteer-extension-transport"
   },
   "homepage": "https://github.com/gajananpp/puppeteer-extension-transport/blob/main/README.md",
+  "author": {
+    "name": "Gajanan Patil"
+  },
   "main": "build/lib/index.js",
   "types": "build/lib/index.d.ts",
   "files": [
