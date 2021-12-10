@@ -1,6 +1,6 @@
 {
   "name": "puppeteer-extension-transport",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Use puppeteer in your browser extension",
   "repository": {
     "url": "https://github.com/gajananpp/puppeteer-extension-transport"
@@ -12,7 +12,7 @@
   "main": "build/lib/index.js",
   "types": "build/lib/index.d.ts",
   "files": [
-    "build/src"
+    "build/lib"
   ],
   "license": "MIT",
   "keywords": [
