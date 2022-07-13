@@ -91,7 +91,7 @@ Check other available options/config for this package [here](docs/README.md).
 
 **Q: With which browsers can this be used ?**
 <br>
-This can be used with chrome and chromium based edge browsers.
+This can be used with chrome and chromium based browsers.
 
 <br>
 
@@ -118,3 +118,6 @@ If you are planning to do any of the following in extension:
 2. profiling, debugging, monitoring and handling lifecycle events of web pages.
 3. any other thing you would like to use puppeteer for.
 <br>
+
+## Puppeteer IDE Extension
+[Extension](https://github.com/gajananpp/puppeteer-ide-extension) made using this library.
